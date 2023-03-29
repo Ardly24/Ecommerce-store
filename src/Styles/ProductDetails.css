@@ -1,0 +1,97 @@
+.productDetails{
+   width: 90%;
+   height:auto ;
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   margin: 10px;
+   border: 1px solid rgb(222, 218, 218);
+   background:  #ffff;
+  }
+   
+   .product-img{
+      width: 40%;
+      height: 100%;
+   }
+  
+  .productDescription{
+     padding: 10px;
+  }
+  
+  .product-name{
+     text-transform: uppercase;
+  }
+  .productDescription .price{
+     padding: 10px;
+     font-size: 25px;
+     font-weight: 600;
+     color: rgb(246, 11, 136);
+   }
+  
+   .wasPrice{
+     color: gray;
+     text-decoration: line-through;
+     font-size: 15px;
+     font-weight: 400;
+     font-style: italic;
+   }
+  
+   .itemPrice{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   }
+
+   .productDetails .btn{
+      padding: 10px;
+      border:1px solid gray;
+      margin-right: 10px;
+   }
+  
+   .productDescription li{
+        padding: 0.1rem 0;
+        list-style:disc;
+        margin-left: 25px;
+    }
+  
+    .icons{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     margin-top: 10px;
+     border: 1px solid rgb(222, 218, 218);
+     border-radius: 10px;
+     padding: 0px;
+    }
+    .icons p{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     color: rgb(99, 151, 249);
+    }
+  
+    .delivery{
+     display: flex;
+     flex-direction: column;
+     margin-top: 10px;
+     border: 1px solid rgb(222, 218, 218);
+     border-radius: 10px;
+     padding: 5px;
+    }
+  
+    .delivery a{
+     color:blue;
+     text-decoration: underline;
+    }
+   
+    @media screen and (max-width: 600px){
+     .product-img{
+        width: 35%;
+        height: 100%;
+     } 
+
+     .icons{
+      font-size: 0.8rem;
+     }
+
+  }

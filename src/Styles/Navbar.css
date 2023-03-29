@@ -1,0 +1,188 @@
+.header{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding-right: 0.5rem;
+    position:absolute;
+    width:100%;
+    height: 70px;
+     z-index: 10;
+    background-color:rgba(77, 77, 77, 0.85)
+}
+
+.logo{
+    width:100%;
+    height: 70px;
+    margin-left: 2px;
+    border-radius: 50%;
+}
+
+.logo1 h1{
+    font-family:serif;
+}
+.logo1{
+    display:flex;
+    align-items: center;
+    left: 0;
+}
+
+.search{
+  margin-top: 10px;
+}
+
+.search input{
+   padding: 9px;
+   width:38rem;
+    border: 1px solid gray;
+    border-radius: 20px 0px 0px 20px;
+    font-size: 15px;
+}
+.search .searchButton{
+    padding: 10px;
+    width: 2rem;
+    border-radius: 0px 20px 20px 0px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+
+.header-bg{
+    background-color: rgba(0 0 0 0.85);
+    transition: 0.5s;
+}
+
+.nav-menu{
+    display: flex;
+}
+
+.nav-menu :hover{
+    color: rgb(246, 11, 136);
+}
+.nav-menu li{
+    padding: 1rem;
+}
+
+.nav-menu li a{
+    font-size: 1.2em;
+   font-weight:500;
+}
+
+.hamburger{
+    display: none;
+}
+
+.items-count{
+    color: red;
+}
+
+
+/*Submenu level 1*/
+.submenu{
+    position: absolute;
+    background-color: rgba(30, 30, 30, 0.85);
+    width: 350px;
+    left:100px;
+    top:50px;
+   display: none;
+}
+.submenu li{
+    border: 1px solid rgb(216, 214, 214);
+    padding: 15px;
+}
+
+.submenu li:hover{
+background-color: rgb(241, 174, 207);
+}
+
+
+/*Submenu level 2*/
+.submenu2{
+    position: absolute;
+    background-color: rgba(30, 30, 30, 0.85);
+    width: 180px;
+    height: 280px;
+    top:0;
+    left: 100%;
+   display:none;
+}
+
+/* Show menu on hover*/
+.nav-menu li:hover > .submenu{
+    display: block;
+    animation: slideup .3s ease;
+}
+
+.submenu li:hover > .submenu2{
+    display: block;
+    animation: slideleft  .3s ease;
+}
+
+/*Animation keyFrames*/
+
+@keyframes slideup {
+    0%{
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+
+@keyframes slideleft {
+    0%{
+        opacity: 0;
+        transform: translateX(18px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .nav-menu{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+        height: 100vh;
+        background-color: rgba(40, 39, 39, 0.85);
+        position:absolute;
+        top:0;
+        left: -100%;
+        z-index: -3;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active{
+        left:0;
+    }
+
+    .nav-menu li{
+        padding: 1rem 0;
+    }
+    .nav-menu li a{
+        font-size: 1.2rem;
+    }
+
+    .hamburger{
+        display: initial;
+    }
+    .search input{
+        width: 200px;
+    }
+
+.submenu{
+    left: 20%;
+    width: 200px;
+    top: 220px;
+    font-weight: 100;
+}
+    
+} 
