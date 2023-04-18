@@ -12,7 +12,7 @@ export default function Navbar(props){
     const [click, setClick]= useState(false);
     const handleClick = () => setClick(!click);
 
-    const [isShown, setIsShown] = useState(false)
+    const [searchInput, setSearchInput] = useState("")
 
     const [color, setColor]=useState(false)
     const changeColor = () => {
@@ -22,6 +22,34 @@ export default function Navbar(props){
            setColor(false)
         }
     }
+
+
+    const products =[
+      {name: "Apple laptops", path:"/products#mac"},
+      {name: "HP laptops", path:"/products#hp"},
+      {name: "Lenovo laptops", path:"/products#lenovo"},
+      {name: "Samsung phones", path:"/products#samsung"},
+      {name: "Apple iphones", path:"/products#hp"},
+      {name: "Huawei Phones", path:"/products#lenovo"},
+      {name: "Amazon Kindle Tablets", path:"products#amazon"},
+      {name: "Apple iPads", path:"products#lenovo"},
+      {name: "Samsung Galaxy Tablets", path:"products#mac"},
+      {name: "Canon Printers", path:"products#hp"},
+      {name: "Epson Printers", path:"products#lenovo"},
+      {name: " HP Printers", path:"products#mac"},
+      {name: "Dell Monitors", path:"products#dell"},
+      {name: "Asus Monitors", path:"products#asus"},
+      {name: "LG Monitors", path:"products#LG"},
+    ]
+
+    const getFilteredItems= (searchInput, products) =>{
+      if(!searchInput){
+        return products
+      }
+      return products.filter(prod => prod.name.includes(searchInput))
+    }
+
+    const filteredItems = getFilteredItems(searchInput, products)
 
   window.addEventListener("scroll", changeColor);
     return(
@@ -80,12 +108,20 @@ export default function Navbar(props){
             </li>
 
             <div className='search'>
-           <input type="text" className='searchProduct' placeholder="Enter your product name"/>
-           <button className="searchButton"> <BsSearch color='gray'/> </button>
-           <datalist>
-            <option>Laptops</option>
-           </datalist>
+           <input type="text" className='searchProduct' 
+                placeholder=" Enter your product name"
+                 value= {searchInput}
+                 onChange={(e) => setSearchInput(e.target.value)}
+                 
+              />
+           <button className="searchButton"> <BsSearch color='gray'/> </button> 
            </div>
+           
+           <div className='searchItems'>
+                {
+                  filteredItems.map(value =><HashLink to={value.path}><p>{value.name}</p></HashLink>)
+                }
+              </div>
            
 
            <li>
@@ -95,10 +131,6 @@ export default function Navbar(props){
             <li>
                 <Link to="/about">About Us</Link>
             </li>
-
-            {/* <li>
-                <Link to="/contact">Contact</Link>
-            </li> */}
             <div className='signin'>
            <li> 
                 <Link to="/login"><BsPersonCircle size='1.5rem'/></Link>
