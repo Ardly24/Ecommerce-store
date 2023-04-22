@@ -54,7 +54,7 @@ export default function Navbar(props){
   window.addEventListener("scroll", changeColor);
     return(
         <div className={color ? "header header-bg" : "header"}>
-            <Link to="/" className='logo1'>
+            <Link to="/Ecommerce-store" className='logo1'>
             <img className='logo' src={logo}/>
             <h1>ardly.</h1>
            </Link>
@@ -125,7 +125,7 @@ export default function Navbar(props){
            
 
            <li>
-                <Link to="/">Home</Link>
+                <Link to="/Ecommerce-store">Home</Link>
             </li> 
 
             <li>

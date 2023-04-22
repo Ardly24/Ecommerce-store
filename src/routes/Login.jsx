@@ -34,7 +34,7 @@ const Login = ({toggleModal, modal}) => {
         </p>
         </div>
 
-        <Link to="/" className='btn back'>Back</Link>
+        <Link to="/Ecommerce-store" className='btn back'>Back</Link>
         </div>
 
   {modal &&(

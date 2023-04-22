@@ -93,7 +93,7 @@ function App() {
   
   return (
   <Routes>
-    <Route path='/' element={<Home cartItems={cartItems} wishItems={wishItems}/>}/>
+    <Route path='/Ecommerce-store' element={<Home cartItems={cartItems} wishItems={wishItems}/>}/>
 
     <Route path='/products' element={<Products macbooks={macbooks} Hp={Hp} Lenovo={Lenovo} samsung={samsung} iPhones={iPhones} 
             Huawei={Huawei} Amazon={Amazon} GalaxyTab={GalaxyTab} iPad={iPad}  showProduct={showProduct} viewProduct={viewProduct} cartItems={cartItems} toggleModal={toggleModal} modal={modal} handleAddItem={handleAddItem} wishItems={wishItems} AddWishListItem={AddWishListItem}
