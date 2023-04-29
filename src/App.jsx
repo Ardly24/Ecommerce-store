@@ -90,13 +90,17 @@ function App() {
       }
   }
 
+  const handleRemoveWishItem =(product) =>{
+      setWishItems(wishItems.filter((item) =>  item.id !== product.id))
+  }
+
   
   return (
   <Routes>
     <Route path='/Ecommerce-store' element={<Home cartItems={cartItems} wishItems={wishItems}/>}/>
 
-    <Route path='/products' element={<Products macbooks={macbooks} Hp={Hp} Lenovo={Lenovo} samsung={samsung} iPhones={iPhones} 
-            Huawei={Huawei} Amazon={Amazon} GalaxyTab={GalaxyTab} iPad={iPad}  showProduct={showProduct} viewProduct={viewProduct} cartItems={cartItems} toggleModal={toggleModal} modal={modal} handleAddItem={handleAddItem} wishItems={wishItems} AddWishListItem={AddWishListItem}
+    <Route path='/Ecommerce-store/products' element={<Products macbooks={macbooks} Hp={Hp} Lenovo={Lenovo} samsung={samsung} iPhones={iPhones} 
+            Huawei={Huawei} Amazon={Amazon} GalaxyTab={GalaxyTab} iPad={iPad}  showProduct={showProduct} viewProduct={viewProduct} cartItems={cartItems} toggleModal={toggleModal} modal={modal} handleAddItem={handleAddItem} wishItems={wishItems} AddWishListItem={AddWishListItem}  
             Canon={Canon} HpPrinter={HpPrinter} Epson={Epson} Dell={Dell} LG={LG} Asus={Asus}/>}
       />
 
@@ -104,15 +108,15 @@ function App() {
            handleAddItem={handleAddItem} cartItems={cartItems} AddWishListItem={AddWishListItem}/>}
         />
 
-    <Route path="/cart" element={<Cart cartItems={cartItems} handleAddItem={handleAddItem}  handleRemoveItem={handleRemoveItem}/>}/>
+    <Route path="/Ecommerce-store/cart" element={<Cart cartItems={cartItems} handleAddItem={handleAddItem}  handleRemoveItem={handleRemoveItem}/>}/>
 
-    <Route path="/wishList" element={<WishList wishItems={wishItems} AddWishListItem={AddWishListItem} 
-           handleAddItem={handleAddItem} handleRemoveItem={handleRemoveItem}/>}
+    <Route path="/Ecommerce-store/wishList" element={<WishList wishItems={wishItems} AddWishListItem={AddWishListItem} 
+           handleAddItem={handleAddItem} handleRemoveItem={handleRemoveItem} handleRemoveWishItem={handleRemoveWishItem}/>}
       />
 
     <Route path='/register' element={<Register toggleModal={toggleModal} modal={modal}/>}/>
-    <Route path='/login' element={<Login  toggleModal={toggleModal} modal={modal}/>}/>
-    <Route path='/about' element={<About  cartItems={cartItems} wishItems={wishItems}/>}/>
+    <Route path='/Ecommerce-store/login' element={<Login  toggleModal={toggleModal} modal={modal}/>}/>
+    <Route path='/Ecommerce-store/about' element={<About  cartItems={cartItems} wishItems={wishItems}/>}/>
   </Routes>
   )
 }

@@ -50,13 +50,32 @@ color: #000;
     height: 10%;
 }
 
+.items{
+width:15%;
+ border: 1px solid rgb(221, 217, 217);
+ background-color: #fff;
+ box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
 .btnAdd{
     padding: 5px;
     cursor: pointer;
     margin: 10px;
-
 }
 
+.wish{
+    width:90%;
+    color: rgb(246, 11, 136);
+    font-size: 15px;
+    font-weight: 500; 
+}
+
+.itemName{
+    width: 35%;
+}
 .btnAdd:hover{
     background-color: rgb(246, 11, 136);
     color: #fff;
@@ -72,6 +91,7 @@ color: #000;
    margin: 15px;
 
 }
+
 
 .cartItems .btn{
     margin: 40px 0px 10px 10px;
@@ -89,14 +109,30 @@ color: #000;
     margin-left: 10%;
   }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
        .cartItems{
         width:90%;
         } 
         .btnBack{
             margin-left: 5%;
         }
+
+        .btnAdd{
+            margin: 5px;
+            padding: 1px;
+            font-size: 12px;
+        }
+
+        .cartList{
+            font-size: 12px;
+            padding: 15px 9px;
+        }
+
+        .items{
+        width: 34%;
      }
      
- 
- 
+     .itemImg{
+        width: 13%;
+    }
+    }

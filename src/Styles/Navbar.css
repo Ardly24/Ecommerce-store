@@ -98,8 +98,15 @@ input:focus  + .searchItems{
     display: none;
 }
 
+.nav{
+    display:none;
+}
+
 .items-count{
     color: red;
+    border-radius: 0px;
+
+    font-size: 20px; 
 }
 
 
@@ -158,8 +165,6 @@ background-color: rgb(241, 174, 207);
     }
 }
 
-
-
 @keyframes slideleft {
     0%{
         opacity: 0;
@@ -172,7 +177,7 @@ background-color: rgb(241, 174, 207);
     }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 900px){
     .nav-menu{
         flex-direction: column;
         justify-content: center;
@@ -210,6 +215,23 @@ background-color: rgb(241, 174, 207);
     width: 200px;
     top: 220px;
     font-weight: 100;
+}
+
+.nav{
+    display: initial;
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:gray;
+    height: 60px;
+}
+.nav p{
+    display: flex;
+     align-items: center;
+    font-size: 12px;
 }
     
 } 

@@ -299,10 +299,10 @@ Canon, HpPrinter, Epson, Dell, LG, Asus}) => {
                  {(item.wasPrice) && <p className='wasPrice'>Was {Rand.format(item.wasPrice)}</p>}
                  <div>
                  <button className='btn' onClick={() =>handleAddItem(item)}>Add to cart</button>
-                 {cartItems.length >0 &&
-                <Link to="/cart"
-                className="btn" onClick={() =>handleAddItem(item)}><TiShoppingCart size='1rem'/> Go to cart 
-                </Link>}
+                 {/* {cartItems.length >0 &&
+                <Link to="/Ecommerce-store/cart"
+                className="btn" onClick={() =>handleAddItem(item)}>  <TiShoppingCart size='1rem'/> View cart
+                </Link>} */}
                </div>
                <Link to="" className='add-to-wish' onClick={() =>{AddWishListItem(item); toggleShown()}} key={item.id}>{isShown ? <BsFillHeartFill color="red" size='1.5rem'/> : <BsHeart color="gray" size='1.5rem'/>}</Link> 
 

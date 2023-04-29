@@ -1,12 +1,12 @@
 import '../Styles/Navbar.css'
 import {TiShoppingCart} from 'react-icons/ti'
-import {BsPersonCircle, BsHeart, BsSearch } from 'react-icons/bs'
+import {BsPersonCircle, BsHeart, BsSearch, BsFillHeartFill } from 'react-icons/bs'
 import {React, useState, useRef} from 'react'
 import logo from '../assets/logo3.png'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link';
 
-import {FaBars,FaTimes,FaSearch } from 'react-icons/fa'
+import {FaBars,FaTimes,FaHome } from 'react-icons/fa'
 
 export default function Navbar(props){
     const [click, setClick]= useState(false);
@@ -63,45 +63,45 @@ export default function Navbar(props){
         <ul className={click ? 'nav-menu active': 'nav-menu'}>
 
             <li>
-                <Link to="/products">Browse Products</Link>
+                <Link to="/Ecommerce-store/products">Browse Products</Link>
                 <ul className='submenu'>
                     <li> <a href=''>Laptops</a>
                       <ul className='submenu2'>
-                        <li><HashLink to='/products#mac'smooth>Apple</HashLink></li>
-                        <li> <HashLink to='/products#hp' smooth>HP</HashLink></li>
-                        <li> <HashLink to='/products#lenovo' smooth>Lenovo</HashLink></li>
+                        <li><HashLink to='/Ecommerce-store/products#mac'smooth>Apple</HashLink></li>
+                        <li> <HashLink to='/Ecommerce-store/products#hp' smooth>HP</HashLink></li>
+                        <li> <HashLink to='/Ecommerce-store/products#lenovo' smooth>Lenovo</HashLink></li>
                       </ul>
                     </li>
 
                     <li> <a href='#'>Phones</a>
                     <ul className='submenu2'>
-                        <li><HashLink to='/products#samsung'smooth>Samsung</HashLink></li>
-                        <li><HashLink to='/products#iphone'smooth>Apple iPhones</HashLink></li>
-                        <li><HashLink to='/products#huawei'smooth>Huawei</HashLink></li>
+                        <li><HashLink to='/Ecommerce-store/products#samsung'smooth>Samsung</HashLink></li>
+                        <li><HashLink to='/Ecommerce-store/products#iphone'smooth>Apple iPhones</HashLink></li>
+                        <li><HashLink to='/Ecommerce-store/products#huawei'smooth>Huawei</HashLink></li>
                       </ul>
                     </li>
                     
                     <li> <a href='#'>Tablets</a>
                     <ul className='submenu2'>
-                        <li><HashLink to='/products#amazon'smooth>Amazon Kindle</HashLink></li>
-                        <li><HashLink to='/products#ipad'smooth>Apple iPads</HashLink></li>
-                        <li><HashLink to='/products#galaxyTab'smooth>Galaxy Tab</HashLink></li>
+                        <li><HashLink to='/Ecommerce-store/products#amazon'smooth>Amazon Kindle</HashLink></li>
+                        <li><HashLink to='/Ecommerce-store/products#ipad'smooth>Apple iPads</HashLink></li>
+                        <li><HashLink to='/Ecommerce-store/products#galaxyTab'smooth>Galaxy Tab</HashLink></li>
                       </ul>
                     </li>
 
                     <li> <a href='#'>Printers</a>
                     <ul className='submenu2'>
-                       <li><HashLink to='/products#canon'smooth>Canon</HashLink></li>
-                       <li><HashLink to='/products#epson'smooth>Epson</HashLink></li>
-                       <li><HashLink to='/products#hpPrinter'smooth>HP</HashLink></li>
+                       <li><HashLink to='/Ecommerce-store/products#canon'smooth>Canon</HashLink></li>
+                       <li><HashLink to='/Ecommerce-store/products#epson'smooth>Epson</HashLink></li>
+                       <li><HashLink to='/Ecommerce-store/products#hpPrinter'smooth>HP</HashLink></li>
                       </ul>
                     </li>
 
                     <li> <a href='#'>Monitors</a>
                     <ul className='submenu2'>
-                        <li><HashLink to='/products#dell'smooth>DELL</HashLink></li>
-                        <li><HashLink to='/products#asus'smooth>ASUS</HashLink></li>
-                        <li><HashLink to='/products#LG'smooth>LG</HashLink></li>
+                        <li><HashLink to='/Ecommerce-store/Ecommerce-store/products#dell'smooth>DELL</HashLink></li>
+                        <li><HashLink to='/Ecommerce-store/products#asus'smooth>ASUS</HashLink></li>
+                        <li><HashLink to='/Ecommerce-store/products#LG'smooth>LG</HashLink></li>
                       </ul>
                     </li>
                 </ul>
@@ -129,21 +129,21 @@ export default function Navbar(props){
             </li> 
 
             <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/Ecommerce-store/about">About Us</Link>
             </li>
             <div className='signin'>
            <li> 
-                <Link to="/login"><BsPersonCircle size='1.5rem'/></Link>
+                <Link to="/Ecommerce-store/login"><BsPersonCircle size='1.5rem'/></Link>
             </li>
             </div>
            <li> 
-                <Link to="/wishList"><BsHeart size='1rem'/></Link>
-                <span className='items-count'>{props.wish}</span>
+                <Link to="/Ecommerce-store/wishList"><BsHeart size='1rem'/></Link>
+                <span className='items-count'><sup>{props.wish}</sup></span>
             </li>
 
             <li>
-                <Link to="/cart"><TiShoppingCart size='1rem'/></Link>
-                <span className='items-count'>{props.size}</span>
+                <Link to="/Ecommerce-store/cart"><TiShoppingCart size='1rem'/></Link>
+                <span className='items-count'><sup>{props.size}</sup></span>
             </li>
             </ul>
 
@@ -151,6 +151,28 @@ export default function Navbar(props){
             {click? (<FaTimes  size={20} style={{color: "#fff"}}/>):
               (<FaBars  size={20} style={{color: "#fff"}}/>)
               }
+        </div>
+
+        <div className='nav'> 
+          
+              <p>
+                <Link to="/Ecommerce-store"><FaHome size='1.5rem'/><br/>HOME</Link>
+                </p>
+
+            <p>
+                <Link to="/Ecommerce-store/wishList"><BsHeart size='1.2rem' />
+                <span className='items-count'><sup>{props.wish}</sup></span><br/>
+                WISH LIST
+                </Link>
+            </p>
+
+             <p>
+                <Link to="/Ecommerce-store/cart"><TiShoppingCart size='1.2rem'/>
+                <span className='items-count'><sup>{props.size}</sup></span><br/>
+                CART
+                </Link>
+            </p>
+          
         </div>
 
 </div>               

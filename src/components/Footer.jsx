@@ -33,7 +33,7 @@ const Footer = () => {
            </div>
            <div className='abt'>
             <h3>About</h3>
-            <a href='/about'>About Us</a>
+            <a href='/Ecommerce-store/about'>About Us</a>
             <a href='#'>Delivery Information</a>
             <a href='#'>Privacy Policy</a>
             <a href='#'>Terms & Conditions</a>
@@ -43,9 +43,9 @@ const Footer = () => {
            </div>
            <div className='account'>
             <h3>My Account</h3>
-            <a href='/login'>Sign In</a>
-            <a href='/cart'>View Cart</a>
-            <a href='/wishList'>My Wishlist</a>
+            <a href='/Ecommerce-store/login'>Sign In</a>
+            <a href='/Ecommerce-store/cart'>View Cart</a>
+            <a href='/Ecommerce-store/wishList'>My Wishlist</a>
             <a href='#'>Track My Order</a>
             <a href='#'>Help</a>
            </div>
